@@ -19,9 +19,18 @@ public class JUNITStack extends TestCase {
 		s1.pushStack(2);
 		s1.pushStack(2);
 		
+		// last in first out
 		assertEquals(s1.isTop(), s1.getValue());
 		assertEquals(s1.isTop(), s1.getValue());
-	
+		
+		/* 
+		
+		stack full
+		s1.pushStack(2);
+		s1.pushStack(2);
+		s1.pushStack(2);
+		s1.pushStack(2);
+		assertFalse(s1.isFull()); */
 		
 	}
 }

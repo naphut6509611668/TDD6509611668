@@ -2,11 +2,16 @@ package core;
 
 
 public class Stack implements IStack {
-	private int size;
+	private int size = 5;
+	private int[] stack = new int[size];
+	private int count = 0;
 	
 	@Override
 	public boolean isEmpty() {
-		return true;
+		if(count == 0) {
+			return true;
+		}
+		return false;
 	}
 
 	@Override
@@ -16,24 +21,30 @@ public class Stack implements IStack {
 	
 	@Override
 	public boolean isFull() {
-		return false;
+		if(count < size) {
+			return false;
+		}
+		return true;
 	}
 	
 	@Override
 	public void pushStack(int value) {
-		size++;
+		if(!isFull()) {
+			count++;
+			stack[count] = value;
+		}
 	}
 	
 	@Override
 	public int getValue() {
-		int temp = size;
-		size--;
-		return temp;
+		int value = stack[count];
+		count--;
+		return value;
 	}
 	
 	@Override
 	public int isTop() {
-		return getSize();
+		return stack[count];
 	}
 	
 	
