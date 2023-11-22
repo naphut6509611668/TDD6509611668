@@ -16,10 +16,7 @@ public class Stack implements IStack {
 	
 	@Override
 	public boolean isFull() {
-		if(getSize() > 0) {
-			return false;
-		}
-		return true;
+		return false;
 	}
 	
 	@Override
